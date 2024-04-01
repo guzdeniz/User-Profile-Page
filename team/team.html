@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Page</title>
+    <link rel="stylesheet" href="../team/teamStyle.css" >
+</head>
+<body>
+    <div class="navBar">
+        <img src="../template/images/climate-change-high-resolution-logo-black-transparent.png" alt="Climate change logo" class="logo">
+        <ul id="top">
+            <li><a href="https://w2046446.users.ecs.westminster.ac.uk/trees/home/home.html">Home</a></li>
+            <li><a href="https://w2038143.users.ecs.westminster.ac.uk/trees/gallery/gallery.html">Gallery</a></li>
+            <li><a href="https://w2035146.users.ecs.westminster.ac.uk/trees/shop/shop.html">Shop</a></li>
+            <li><a href="https://w2011525.users.ecs.westminster.ac.uk/trees/profile/profile.html">User</a></li>
+            <li><a href="https://w2046446.users.ecs.westminster.ac.uk/trees/feedback/feedback.html">Feedback</a></li>
+            <li><a href="https://w2038143.users.ecs.westminster.ac.uk/trees/sitemap/sitemap.html">Sitemap</a></li>
+            <li><a id="active" href="https://w2011525.users.ecs.westminster.ac.uk/trees/team/team.html">Team</a></li>
+        </ul>
+    </div>
+    <sub id="topOfPage">topOfPage</sub>
+    <div class="mainContent">
+    </div>
+    <center><h1>Our Team</h1></center>
+        
+    <center><div class="images">
+         <img src="../team/images/icon1.png" alt="Avatar 1" id="BigAvatarPic">
+         <div class="description"><span id="description"> Mali Kash</span></div>
+         <div id="studentNum"> Student 1</div>
+         <div id="page">Splash Screen and Shop</div>
+     <br>
+     <br>
+         <div>
+         <img src="../team/images/icon1.png" class="thumbnail" alt = "Mali Kash" onmouseover="changeBigAvatarPic(this.src); changeDescription(0);" id="MaliKash">
+         <img src="../team/images/icon2.jpg" class="thumbnail" alt = "Mehmet Gilgil" onmouseover="changeBigAvatarPic(this.src); changeDescription(1);" id="MehmetGilgil">
+         <img src="../team/images/icon3.png" class="thumbnail" alt = "Guzdeniz Guzeloglu" onmouseover="changeBigAvatarPic(this.src); changeDescription(2);" id="GuzdenizGuzeloglu">
+         <img src="../team/images/icon4.webp" class="thumbnail" alt = "Fares Bouchair" onmouseover="changeBigAvatarPic(this.src); changeDescription(3);" id="FaresBouchair">
+         </div>
+      </div>   
+</center> 
+     
+<script>
+ function changeBigAvatarPic(source){
+     document.getElementById("BigAvatarPic").src = source;
+ }
+
+ function changeDescription (index){
+     const descriptions = ["Mali Kash", "Mehmet Gilgil", "Guzdeniz Guzeloglu","Fares Bouchair"];
+     document.getElementById("description").innerHTML = descriptions[index];
+     const studentnumber = ["Student 1","Student 2","Student 3","Student 4"];
+     document.getElementById("studentNum").innerHTML = studentnumber[index];
+     const pages = ["Splash Screen and Shop","Home page and Feedback","User Profile and Team Page","Gallery and Sitemap"]
+     document.getElementById("page").innerHTML = pages[index];
+ }
+</script>
+    <footer>
+        <hr>
+        <ul>
+            <li><a href="https://w2011525.users.ecs.westminster.ac.uk/trees/pageEditor_ST3/pageEditor_ST3.html" target="_blank">Page Editor</a></li>
+            <li>Last Modified Date: 1<sup>st</sup> April 2024</li>
+        </ul>
+        <a href="#topOfPage" class="backToTop">TOP</a>
+    </footer>
+</body>
+</html>

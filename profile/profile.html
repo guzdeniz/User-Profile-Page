@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile Builder</title>
+    <link rel="stylesheet" href="../profile/profileStyle.css" >
+</head>
+<body>
+    <div class="navBar">
+        <img src="../template/images/climate-change-high-resolution-logo-black-transparent.png" alt="Climate change logo" class="logo">
+        <ul id="top">
+            <li><a href="https://w2046446.users.ecs.westminster.ac.uk/trees/home/home.html">Home</a></li>
+            <li><a href="https://w2038143.users.ecs.westminster.ac.uk/trees/gallery/gallery.html">Gallery</a></li>
+            <li><a href="https://w2035146.users.ecs.westminster.ac.uk/trees/shop/shop.html">Shop</a></li>
+            <li><a id="active" href="https://w2011525.users.ecs.westminster.ac.uk/trees/profile/profile.html">User</a></li>
+            <li><a href="https://w2046446.users.ecs.westminster.ac.uk/trees/feedback/feedback.html">Feedback</a></li>
+            <li><a href="https://w2038143.users.ecs.westminster.ac.uk/trees/sitemap/sitemap.html">Sitemap</a></li>
+            <li><a href="https://w2011525.users.ecs.westminster.ac.uk/trees/team/team.html">Team</a></li>
+        </ul>
+    </div>
+    <sub id="topOfPage">topOfPage</sub>
+    <div class="mainContent">
+    </div>
+<!-- Profile Building Section -->
+<center> <h2 id="heading">User Profile Builder</h2></center>
+       
+<div class="grid-container">
+    <div class="profileBuilder">
+        
+        <h3>Personal Details:</h3>
+        <div >
+            <p id="name">Name:</p>
+            <p id="surname">Surname:</p>
+            <p id="Age">Age:</p>
+            <p id="gender">Gender:</p>
+        </div>
+    </div>
+    <div class="VolunteeringQuestions">
+        <h3>Volunteering Questions:</h3>
+        <div >
+            <p id="thisWebsite">What brings you to this website?:</p>
+            <p id="aboutUs">How did you know about us?:</p>
+            <p id="assign">Where do you want to assign?:</p>
+            <p id="live">Where do you live?:</p>
+        </div>
+    </div>
+    <div class="Qualifications">
+        <h3>Qualifications:</h3>
+        <div >
+            <p id="areaOfStudy">Area of study?:</p>
+            <p id="degree">What degree do you have?:</p>
+            <p id="university">Which university did you attend?:</p>
+            <p id="graduate">When did you Graduate?:</p>
+        </div>
+    </div>
+    <div class="contact">
+        <h3>Availabilty and Contact:</h3>
+        <div >
+            <p id="Availabilty">What is your Availability per week?:</p>
+            <p id="phone">What is your phone number?:</p>
+            <p id="mail">What is your e-mail?:</p>
+            <p id="adress">What is your address?:</p>
+        </div>
+    </div>
+</div>
+<br>
+<center><button class="startButton" onclick="button()">START</button></center> 
+
+
+<p id="barText">0% Completed</p>
+<div class="progress-bar" id="progress-bar"></div>
+
+
+
+
+<script>
+const inputarray= [];
+
+
+
+
+var progress = 0;
+function progressBar(){
+document.getElementById('progress-bar').style.width = progress + '%';
+document.getElementById("barText").innerText=progress+"% Completed"
+}
+
+
+function button(){
+    name1();
+    surname1();
+    age1();
+    gender1();
+    progressBar();
+    thisWebsite1();
+    aboutUs1();
+    assign1();
+    live1();
+    areaOfStudy1();
+    degree1();
+    university1();
+    graduate1();
+    Availabilty1();
+    phone1();
+    mail1();
+    adress1();
+    
+    
+}
+
+
+
+
+function name1(){
+
+    var name= prompt('whats your name? 1/16');
+
+    if(name==''){
+        alert('this cannot be empty');
+        name1();
+        return;
+    progress-= 6.25;
+    }
+     else if(name== null) {
+        alert("you canceled the process");
+        name1();
+        return;
+        
+        progress-= 6.25;
+        
+     }
+     else{
+        progress+=6.25
+        document.getElementById('name').innerText="Name:"+name;
+        progressBar();
+        inputarray.push(name);
+     }
+
+}
+function surname1(){
+    var surname= prompt('whats your surname? 2/16');
+    if(surname==''){
+        alert('this cannot be empty');
+        surname1();
+        return;
+        progress-= 6.25;
+    }
+     else if(surname== null) {
+        alert("you canceled the process");
+        surname1();
+        return;
+        progress-= 6.25;
+
+     } 
+     else{
+        progress+= 6.25;
+        document.getElementById('surname').innerText="Surname:"+surname;
+        progressBar();
+        inputarray.push(surname);
+
+     }
+}
+function age1(){
+    var age= prompt('how old are you? 3/16');
+     
+    if(age==''){
+        alert('this cannot be empty');
+        age1();
+        return;
+        progress-= 6.25;              
+    }
+    else if(age== null) {
+        alert("you canceled the process");
+        
+        return;
+        progress-= 6.25;
+        
+     }                          
+     else{
+        var ageNum=parseInt(age); 
+     if(isNaN(ageNum)){
+        alert("please enter a valid age");
+        age1();
+        return;
+        progress-= 6.25;
+     }             
+      else if(ageNum<=0 ){
+        alert("please enter  a valid age");
+        age1();
+        return;
+        progress-= 6.25;
+     }
+     else if(ageNum>=100){
+        
+        alert("please enter a valid age");
+        age1();
+        return;
+        progress-= 6.25;
+     }
+     
+     
+     
+     
+    
+    else{
+        progress+= 6.25;
+        document.getElementById('Age').innerText="age:"+ageNum;
+        progressBar();
+        inputarray.push(age);
+
+    }
+
+}
+}
+
+
+    function gender1(){
+        var gender=prompt("what is your gender? 4/16");
+        if (gender==""){
+        
+         progress-= 6.25;
+        }
+        
+    
+    else{
+        progress+= 6.25;
+        document.getElementById('gender').innerText="gender:"+gender;
+        progressBar();
+        inputarray.push(gender);
+
+    }
+}  
+
+
+
+
+
+
+
+        function thisWebsite1(){
+          var thisWebsite=prompt("What brings you to this website? 5/16");
+          if (thisWebsite==""){
+            
+            inputarray.push(thisWebsite);
+            
+          }
+          else{
+            progress+= 6.25;
+            document.getElementById('thisWebsite').innerText="What brings you to this website?:"+thisWebsite;
+          }
+        }
+
+        function aboutUs1(){
+            var aboutUs=prompt("How did you know about us? 6/16");
+            if(aboutUs==""){
+                
+               
+            }
+            else{
+                progress+= 6.25;
+                document.getElementById('aboutUs').innerText="How did you know about us?:"+aboutUs;
+                progressBar();
+                inputarray.push(aboutUs);
+
+            }
+        }
+
+        function assign1(){
+            var assign= prompt(" Where do you want to assign? 7/16");
+            if (assign==""){
+                alert("this cannot be empty");
+                assign1();
+                return;
+                progress-= 6.25;
+            }
+            else{
+                progress+= 6.25;
+                document.getElementById('assign').innerText="Where do you want to assign?:"+assign;
+                progressBar();
+                inputarray.push(assign);
+
+            }
+        }
+
+        function live1(){
+            var live= prompt("Where do you live? 8/16");
+            if(live==""){
+                alert("this cannot be empty");
+                live1();
+                return;
+                progress-= 6.25;
+
+            }
+            else{
+                progress+= 6.25;
+                document.getElementById('live').innerText="Where do you live?:"+live;
+                progressBar();
+                inputarray.push(live);
+
+            }
+        }
+
+ 
+function areaOfStudy1(){
+    var areaOfStudy= prompt("Area of Study? 9/16");
+    if(areaOfStudy==""){
+        alert("this cannot be empty");
+        areaOfStudy1();
+        return;
+        progress-= 6.25;
+
+    }
+    else{
+        progress+= 6.25;
+        document.getElementById('areaOfStudy').innerText="Area of Study?:"+areaOfStudy;
+        progressBar();
+        inputarray.push(areaOfStudy);
+
+
+    }
+}
+
+function degree1(){
+    var degree= prompt("What degree do you have? 10/16");
+    if(degree==""){
+        alert("this cannot be empty");
+        degree1();
+        return;
+        progress-= 6.25;
+
+    }
+    else{
+        progress+= 6.25;
+        document.getElementById('degree').innerText="What degree do you have?:"+degree;
+        progressBar();
+        inputarray.push(degree);
+
+
+
+    }
+}
+function university1(){
+    var university= prompt("Which university did you attend? 11/16");
+    if(university==""){
+        alert("this cannot be empty");
+        university1();
+        return;
+        progress-= 6.25;
+
+    }
+    else{
+        progress+= 6.25;
+        document.getElementById('university').innerText="Which university did you attend?:"+university;
+        progressBar();
+        inputarray.push(university);
+
+
+    }
+}
+
+function graduate1(){
+    var graduate= prompt("When did you Graduate? 12/16");
+    if(graduate==""){
+        alert("this cannot be empty");
+        graduate1();
+        return;
+        progress-= 6.25;
+
+    }
+    else{
+        graduateNum=parseInt(graduate);
+        if(graduateNum<=1950){
+            alert("Please enter a valid graduation year");
+            graduate1();
+            return;
+            progress-= 6.25;
+        }
+        else if(graduateNum>2030){
+            alert("Please enter a valid graduation year");
+            graduate1();
+            return;   
+            progress-= 6.25;
+        }
+        else if(isNaN(graduateNum)){
+            alert("Please enter a valid graduation year");
+            graduate1();
+            return;   
+            progress-= 6.25; 
+        }
+        else if(graduate==null){
+            alert("you canceled the process");
+            graduate1();
+            progress-= 6.25;
+            return;
+            
+        }
+    
+    else{
+        progress+= 6.25;
+        document.getElementById('graduate').innerText="When did you Graduate?"+graduate;
+        progressBar();
+        inputarray.push(graduate);
+
+
+
+    }
+}
+}
+
+
+function Availabilty1(){
+    var Availabilty= prompt("What is your Availabilty per week? 13/16");
+    if(Availabilty===""){
+        alert("this cannot be empty");
+        return;
+        progress-= 6.25;
+    }
+    else{
+        progress+= 6.25;
+        document.getElementById('Availabilty').innerText="What is your Availabilty per week?:"+Availabilty;
+        progressBar();
+        inputarray.push(Availabilty);
+
+
+    }
+
+}
+
+function phone1(){
+    
+    var phone=prompt("What is your phone number? 14/16");
+        if(phone===""){
+            alert("this cannot be empty");
+            phone1();
+            return;
+            progress-= 6.25;
+        }
+        
+        else{
+            progress+= 6.25;  
+            document.getElementById('phone').innerText="What is your phone number?:"+phone;
+            progressBar();
+            inputarray.push(phone);
+
+
+        }
+    }
+        
+            
+                
+            
+        
+    
+    function mail1(){
+        var mail=prompt("What is your e-mail? 15/16");
+        if(mail===""){
+            alert("this cannot be empty");
+            mail1();
+            return;
+            progress-= 6.25;
+        }
+        else{
+            progress+= 6.25;
+            document.getElementById('mail').innerText="what is your e-mail?:"+mail;
+            progressBar();
+            inputarray.push(mail);
+
+        }
+    }
+
+    function adress1(){
+        var adress =prompt("What is your adress? 16/16");
+        if(adress===""){
+            alert("this cannot be empty");
+            adress1();
+            return;
+            progress-= 6.25;
+        }
+        else{
+            progress+= 6.25;
+            document.getElementById('adress').innerText="what is your adress?:"+adress;
+            progressBar();
+            inputarray.push(adress);
+
+        }
+    }
+
+     
+</script>
+    <footer>
+        <hr>
+        <ul>
+            <li><a href="https://w2011525.users.ecs.westminster.ac.uk/trees/pageEditor_ST3/pageEditor_ST3.html" target="_blank">Page Editor</a></li>
+            <li>Last Modified Date: 1<sup>st</sup> April 2024</li>
+        </ul>
+        <a href="#topOfPage" class="backToTop">TOP</a>
+    </footer>
+</body>
+</html>
